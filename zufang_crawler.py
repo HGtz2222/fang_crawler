@@ -33,13 +33,14 @@ def GetPlotName(item):
 	'''
 	获取小区名字
 	'''
-	return item.find_all(class_ = "gray6 mt20")[0].contents[4].span.string
+	return item.find_all(class_ = "gray6 mt20")[0].contents[-2].span.string
+	#return item.find_all(class_ = "gray6 mt20")[0].contents
 
 def GetPlotUrl(item):
 	'''
 	获取小区 url
 	'''
-	return item.find_all(class_ = "gray6 mt20")[0].contents[4].attrs["href"]
+	return item.find_all(class_ = "gray6 mt20")[0].contents[-2].attrs["href"]
 
 def GetArea(item):
 	'''
@@ -162,7 +163,7 @@ def TestMain():
 		#Log(INFO, str(GetRooms(item)))
 		#Log(INFO, str(GetHeight(item)))
 		#Log(INFO, str(GetArea(item)))
-		#Log(INFO, str(GetPlotName(item)))
+		Log(INFO, str(GetPlotName(item)))
 		#Log(INFO, str(GetPlotUrl(item)))
 		#Log(INFO, str(GetUnitPrice(item)))
 		#Log(INFO, str(GetTrainNote(item)))
